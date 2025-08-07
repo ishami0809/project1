@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mercedes-Benz Cars</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <script>
+    const modelData = {
+      amg: {
+        title: "Mercedes-AMG GT",
+        image: "https://www.carsession.com/wp-content/uploads/2014/10/Mercedes-AMGT-GT-prices-announced-1024x580.jpg",
+        description: "The AMG GT delivers high performance with stunning design and luxurious features. It’s a true sports car.",
+        price: "Starting at $92,500"
+      },
+      eclass: {
+        title: "Mercedes-Benz E-Class",
+        image: "https://www.mercedes-benz.co.id/media/14jiynls/re_e-class_exterior_styling-tab.png",
+        description: "The E-Class blends innovation and comfort, featuring driver-assist systems and a sleek interior.",
+        price: "Starting at $56,000"
+      },
+      gls: {
+        title: "Mercedes-Benz GLS",
+        image: "https://www.mercedes-benz-kenya.com/media/gamme/modeles/images/dc665a605cf8bc8d7b3a0d974f2f0e59.jpeg",
+        description: "A luxurious full-size SUV with three rows, refined design, and a powerful engine for every adventure.",
+        price: "Starting at $81,800"
+      },
+      gclass: {
+        title: "Mercedes-Benz G-Class",
+        image: "https://tse2.mm.bing.net/th/id/OIP.NAdU-qhCk-nEKyQymdNevQAAAA?r=0&w=474&h=319&rs=1&pid=ImgDetMain&o=7&rm=3",
+        description: "Iconic, rugged, and luxurious — the G-Class combines off-road capabilities with high-end refinement.",
+        price: "Starting at $139,900"
+      },
+      cclass: {
+        title: "Mercedes-Benz C-Class Coupe",
+        image: "https://imgcdn.zigwheels.my/large/gallery/color/17/104/mercedes-benz-c-class-coupe-color-140155.jpg",
+        description: "A sleek coupe with dynamic performance, elegant design, and advanced safety features.",
+        price: "Starting at $49,800"
+      },
+      eqs: {
+        title: "Mercedes-Benz EQS",
+        image: "https://tse3.mm.bing.net/th/id/OIP.jA-xWEOxx9EXYgz5U4QqngHaEL?r=0&w=930&h=524&rs=1&pid=ImgDetMain&o=7&rm=3",
+        description: "The all-electric EQS offers futuristic design, groundbreaking technology, and silent performance.",
+        price: "Starting at $104,400"
+      }
+    };
+
+    function showDetails(modelKey) {
+      const model = modelData[modelKey];
+      document.getElementById("modalTitle").innerText = model.title;
+      document.getElementById("modalImage").src = model.image;
+      document.getElementById("modalDescription").innerText = model.description;
+      document.getElementById("modalPrice").innerText = model.price;
+      document.getElementById("modelModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("modelModal").style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById("modelModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
+
+  <header>
+    <div class="logo-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/120px-Mercedes-Logo.svg.png" alt="Mercedes-Benz Logo" class="logo" />
+      <h1>Mercedes-Benz Cars</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="models">
+      <h2>Featured Models</h2>
+      <div class="model-list">
+        <!-- Existing Models -->
+        <div class="model-item" onclick="showDetails('amg')">
+          <img src="https://www.carsession.com/wp-content/uploads/2014/10/Mercedes-AMGT-GT-prices-announced-1024x580.jpg" alt="Mercedes-AMG GT" />
+          <div class="model-info">
+            <h3>Mercedes-AMG GT</h3>
+            <p>Sporty and elegant, the AMG GT blends performance and luxury seamlessly.</p>
+          </div>
+        </div>
+
+        <div class="model-item" onclick="showDetails('eclass')">
+          <img src="https://www.mercedes-benz.co.id/media/14jiynls/re_e-class_exterior_styling-tab.png" alt="Mercedes-Benz E-Class" />
+          <div class="model-info">
+            <h3>Mercedes-Benz E-Class</h3>
+            <p>The E-Class offers cutting-edge technology and refined comfort.</p>
+          </div>
+        </div>
+
+        <div class="model-item" onclick="showDetails('gls')">
+          <img src="https://www.mercedes-benz-kenya.com/media/gamme/modeles/images/dc665a605cf8bc8d7b3a0d974f2f0e59.jpeg" alt="Mercedes-Benz GLS" />
+          <div class="model-info">
+            <h3>Mercedes-Benz GLS</h3>
+            <p>The GLS is the flagship luxury SUV, spacious and powerful.</p>
+          </div>
+        </div>
+
+        <!-- New Models -->
+        <div class="model-item" onclick="showDetails('gclass')">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.NAdU-qhCk-nEKyQymdNevQAAAA?r=0&w=474&h=319&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mercedes-Benz G-Class" />
+          <div class="model-info">
+            <h3>Mercedes-Benz G-Class</h3>
+            <p>Iconic design meets luxury and off-road power.</p>
+          </div>
+        </div>
+
+        <div class="model-item" onclick="showDetails('cclass')">
+          <img src="https://imgcdn.zigwheels.my/large/gallery/color/17/104/mercedes-benz-c-class-coupe-color-140155.jpg" alt="Mercedes-Benz C-Class Coupe" />
+          <div class="model-info">
+            <h3>Mercedes-Benz C-Class Coupe</h3>
+            <p>Sleek and sporty, with refined power and control.</p>
+          </div>
+        </div>
+
+        <div class="model-item" onclick="showDetails('eqs')">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.jA-xWEOxx9EXYgz5U4QqngHaEL?r=0&w=930&h=524&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mercedes-Benz EQS" />
+          <div class="model-info">
+            <h3>Mercedes-Benz EQS</h3>
+            <p>Luxury meets electric innovation in the EQS.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Section -->
+    <div id="modelModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <img id="modalImage" src="" alt="Car image" />
+        <p id="modalDescription"></p>
+        <p id="modalPrice"></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mercedes-Benz</p>
+  </footer>
+</body>
+</html>
